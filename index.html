@@ -47,10 +47,20 @@
         .button:hover {
             background-color: #0056b3;
         }
+        .toggle-link {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="login-container">
         <h2>Login</h2>
         <div class="form-group">
             <label for="login-email">Email:</label>
@@ -61,9 +71,10 @@
             <input type="password" id="login-password" required>
         </div>
         <button class="button" onclick="handleLogin()">Login</button>
+        <div class="toggle-link" onclick="toggleForm()">Don't have an account? Register here.</div>
     </div>
 
-    <div class="container">
+    <div class="container" id="register-container" style="display: none;">
         <h2>Register</h2>
         <div class="form-group">
             <label for="register-email">Email:</label>
@@ -74,6 +85,7 @@
             <input type="password" id="register-password" required>
         </div>
         <button class="button" onclick="handleRegister()">Register</button>
+        <div class="toggle-link" onclick="toggleForm()">Already have an account? Login here.</div>
     </div>
 
     <!-- Lottie Animation Container -->
@@ -98,6 +110,18 @@
         function handleRegister() {
             // Add your registration logic here
             alert('Registration successful!');
+        }
+
+        function toggleForm() {
+            var loginContainer = document.getElementById('login-container');
+            var registerContainer = document.getElementById('register-container');
+            if (loginContainer.style.display === 'none') {
+                loginContainer.style.display = 'block';
+                registerContainer.style.display = 'none';
+            } else {
+                loginContainer.style.display = 'none';
+                registerContainer.style.display = 'block';
+            }
         }
     </script>
 
