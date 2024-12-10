@@ -31,21 +31,14 @@ CEO & Founder of StudioAs Inc. Passionate about technology and innovation. Alway
 
 ## Projects
 ### Synapse
-- **Description:** A comprehensive project to [brief description of what Synapse does].
+- **Description:** A comprehensive project to create social network.
 - **Technologies Used:** Java, HTML, Flutter
 
 ### Chat+
-- **Description:** A [brief description of what Chat+ does].
+- **Description:** A messenger to chat with Synapse users.
 - **Technologies Used:** Java, HTML, Flutter
 
 ## Languages
 - **English:** Proficient
 - **Bengali:** Native
 - **Hindi:** Proficient
-
-## References
-Available upon request.
-
----
-
-Feel free to adjust and expand upon this template to better showcase your qualifications and achievements! If you need more sections or details, just let me know.
