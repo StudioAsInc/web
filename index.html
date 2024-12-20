@@ -1,176 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Registration</title>
-    <!-- Load Lottie Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.14/lottie.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            width: 300px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .toggle-link {
-            display: block;
-            margin-top: 10px;
-            text-align: center;
-            color: #007bff;
-            cursor: pointer;
-        }
-        .toggle-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login #9</title>
 </head>
 <body>
-    <div class="container" id="login-container">
-        <h2>Login</h2>
-        <div class="form-group">
-            <label for="login-email">Email:</label>
-            <input type="email" id="login-email" required>
+
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="form-block">
+                            <div class="mb-4">
+                                <h3 id="form-title">Sign In to <strong>Colorlib</strong></h3>
+                                <p class="mb-4" id="form-helper-text">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+                            </div>
+                            <form id="auth-form">
+                                <div class="form-group first">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="form-group last mb-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <div class="form-group mb-4 hidden" id="confirm-password-group">
+                                    <label for="confirm-password">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirm-password">
+                                </div>
+
+                                <div class="d-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                                        <input type="checkbox" checked="checked"/>
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                                </div>
+
+                                <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary" id="submit-btn">
+
+                                <p class="mt-2 text-center" id="form-toggle">
+                                    Don't have an account? <a href="#" id="signup-link">SIGN UP</a>
+                                </p>
+                                <span class="d-block text-center my-4 text-muted"> or sign in with</span>
+
+                                <div class="social-login text-center">
+                                    <a href="#" class="facebook">
+                                        <span class="icon-facebook mr-3"></span>
+                                    </a>
+                                    <a href="#" class="twitter">
+                                        <span class="icon-twitter mr-3"></span>
+                                    </a>
+                                    <a href="#" class="google">
+                                        <span class="icon-google mr-3"></span>
+                                    </a>
+                                </div>
+                            </form>
+                            <p id="error-message" class="text-danger mt-2 text-center"></p> <!-- To Display error -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="login-password">Password:</label>
-            <input type="password" id="login-password" required>
-        </div>
-        <button class="button" onclick="handleLogin()">Login</button>
-        <div class="toggle-link" onclick="toggleForm()">Don't have an account? Register here.</div>
     </div>
+</div>
 
-    <div class="container" id="register-container" style="display: none;">
-        <h2>Register</h2>
-        <div class="form-group">
-            <label for="register-email">Email:</label>
-            <input type="email" id="register-email" required>
-        </div>
-        <div class="form-group">
-            <label for="register-password">Password:</label>
-            <input type="password" id="register-password" required>
-        </div>
-        <button class="button" onclick="handleRegister()">Register</button>
-        <div class="toggle-link" onclick="toggleForm()">Already have an account? Login here.</div>
-    </div>
-
-    <!-- Lottie Animation Container -->
-    <div id="lottie-animation" style="width: 100px; height: 100px;"></div>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyA1W0rNXV78mQV4WX3JljmPewRP1-DtZiU",
-            authDomain: "synapse-social-sai.firebaseapp.com",
-            databaseURL: "https://synapse-social-sai-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "synapse-social-sai",
-            storageBucket: "synapse-social-sai.firebasestorage.app",
-            messagingSenderId: "269633434355",
-            appId: "1:269633434355:web:4b8a8c50f1001aeaa3bd86",
-            measurementId: "G-3BLHJ42D92"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const analytics = getAnalytics(app);
-
-        // Load the Lottie animation
-        var animation = lottie.loadAnimation({
-            container: document.getElementById('lottie-animation'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'https://raw.githubusercontent.com/StudioAsInc/web/refs/heads/main/loader.json'
-        });
-
-        window.handleLogin = function() {
-            const email = document.getElementById('login-email').value;
-            const password = document.getElementById('login-password').value;
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    window.location.href = 'assets/sai/index.html';
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    alert("Login failed: " + errorMessage);
-                });
-        }
-
-        window.handleRegister = function() {
-            const email = document.getElementById('register-email').value;
-            const password = document.getElementById('register-password').value;
-
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Registration successful
-                    alert("Registration successful!");
-                    toggleForm(); // Switch to login form
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                   alert("Registration failed: " + errorMessage);
-
-                });
-        }
-
-        window.toggleForm = function() {
-            var loginContainer = document.getElementById('login-container');
-            var registerContainer = document.getElementById('register-container');
-            if (loginContainer.style.display === 'none') {
-                loginContainer.style.display = 'block';
-                registerContainer.style.display = 'none';
-            } else {
-                loginContainer.style.display = 'none';
-                registerContainer.style.display = 'block';
-            }
-        }
-    </script>
-
-    <!-- Credits -->
-    <!-- Code by Md Ashik (https://github.com/studioasinc) -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth-compat.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
-</html>
+    </html>
