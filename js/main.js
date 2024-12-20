@@ -36,7 +36,7 @@ let isSignUpMode = false;
 function updateUI(user) {
     if (user) {
         // User is signed in.
-        window.location.href = 'dashboard.html' // Redirect to dashboard
+        window.location.href = 'https://www.google.com'; // Redirect to google.com
     } else {
         // No user is signed in.
       console.log('Not logged in')
