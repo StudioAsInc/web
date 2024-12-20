@@ -54,6 +54,7 @@ loginForm.addEventListener('submit', (event) => {
             const user = userCredential.user;
             console.log('Logged in', user)
             showMessage('Logged In successfully', 'success');
+            window.location.href = 'https://www.google.com'; // Redirect to google.com
         })
         .catch((error) => {
           console.error("Error logging in:", error);
