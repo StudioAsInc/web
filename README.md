@@ -2,7 +2,7 @@
 
 [![Website](https://img.shields.io/website?down_message=offline&label=Website&style=flat-square&url=https://studioasinc.github.io/web)](Web)
 
-This repository contains the source code for my personal website (or the website for [your project/organization]). It is hosted using GitHub Pages.
+This repository contains the source code for my personal website or my organization]). It is hosted using GitHub Pages.
 
 ## Table of Contents
 
