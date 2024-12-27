@@ -4,7 +4,7 @@
 
 This repository contains the source code for my personal website or my organization]). It is hosted using GitHub Pages.
 
-## Table of Contents
+## Index
 
 - [About](#about)
 - [Getting Started](#getting-started)
