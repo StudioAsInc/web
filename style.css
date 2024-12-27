@@ -1,0 +1,105 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1em 0;
+}
+nav {
+   display: flex;
+    justify-content: space-around;
+     align-items: center;
+}
+
+.logo a{
+    color:white;
+    text-decoration: none;
+    font-size:1.5em;
+}
+
+.nav-links {
+   list-style:none;
+   display:flex;
+   margin:0;
+   padding:0;
+   gap:2em;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+.nav-links a:hover{
+    text-decoration: underline;
+}
+
+
+main {
+    padding: 20px;
+}
+
+.hero {
+    background: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+.content-section {
+    margin-bottom: 30px;
+}
+
+.grid-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 20px;
+}
+
+
+.tutorial-card, .article-card, .project-card{
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.read-more {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.read-more:hover {
+    background: #1e7e34;
+}
+
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
