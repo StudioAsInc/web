@@ -1,6 +1,6 @@
 # Web
 
-[![Website](https://img.shields.io/website?down_message=offline&label=Website&style=flat-square&url=YOUR_WEBSITE_URL)](YOUR_WEBSITE_URL)
+[![Website](https://img.shields.io/website?down_message=offline&label=Website&style=flat-square&url=https://studioasinc.github.io/web)](Web)
 
 This repository contains the source code for my personal website (or the website for [your project/organization]). It is hosted using GitHub Pages.
 
