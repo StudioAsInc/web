@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=webApp/authentication.html">
-    <title>Redirecting...</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Academy</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <p>You are being redirected to webApp/authentication.html...</p> 
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">WebDev Academy</a> <!-- Logo/Site Title -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Learn Web Development</h1>
+                <p>Your journey to becoming a web developer starts here. Explore our tutorials, articles, and projects.</p>
+                <a href="#tutorials" class="button">Start Learning</a>
+            </div>
+        </section>
+
+        <section id="tutorials" class="content-section">
+            <h2>Tutorials</h2>
+             <div class="grid-container">
+             <article class="tutorial-card">
+                  <h3>HTML Fundamentals</h3>
+                   <p>Learn the basic structure of HTML.</p>
+                   <a href="tutorial-html.html" class="read-more">Read More</a>
+                 </article>
+                  <article class="tutorial-card">
+                      <h3>CSS Basics</h3>
+                   <p>Learn how to style your web pages.</p>
+                   <a href="tutorial-css.html" class="read-more">Read More</a>
+                 </article>
+                  <article class="tutorial-card">
+                       <h3>JavaScript Introduction</h3>
+                    <p>Get started with the language of interactivity.</p>
+                    <a href="tutorial-js.html" class="read-more">Read More</a>
+                 </article>
+             </div>
+             <!-- More tutorial cards -->
+        </section>
+
+        <section id="articles" class="content-section">
+           <h2>Articles</h2>
+               <div class="grid-container">
+                   <article class="article-card">
+                   <h3>Understanding Responsive Design</h3>
+                   <p>Learn why and how to make websites that adapt to different screen sizes.</p>
+                    <a href="article-responsive.html" class="read-more">Read More</a>
+                   </article>
+                    <article class="article-card">
+                        <h3>Web Accessibility Best Practices</h3>
+                        <p>Learn to build websites for everyone.</p>
+                    <a href="article-accessibility.html" class="read-more">Read More</a>
+                    </article>
+                    <article class="article-card">
+                         <h3>Choosing a Web Framework</h3>
+                    <p>A look at popular options for front end development</p>
+                    <a href="article-framework.html" class="read-more">Read More</a>
+                   </article>
+                </div>
+             <!-- More article cards -->
+        </section>
+
+
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+             <div class="grid-container">
+                    <article class="project-card">
+                   <h3>Simple Portfolio Website</h3>
+                   <p>A project to practice with HTML and CSS.</p>
+                    <a href="project-portfolio.html" class="read-more">Read More</a>
+                   </article>
+                    <article class="project-card">
+                        <h3>To-Do List App</h3>
+                        <p>Build a basic to-do app with HTML, CSS and JavaScript.</p>
+                    <a href="project-todo.html" class="read-more">Read More</a>
+                    </article>
+                     <article class="project-card">
+                         <h3>Calculator</h3>
+                    <p>Learn JavaScript logic with a simple project</p>
+                    <a href="project-calc.html" class="read-more">Read More</a>
+                   </article>
+             </div>
+             <!-- More Project cards -->
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About WebDev Academy</h2>
+            <p>WebDev Academy is designed to be a free resource for learning all about web development. We strive to make coding accesible to anyone, from beginner to advanced learners. </p>
+            <p>We are constantly working to create new content and improve your learning experience. Feel free to get in touch with any feedback.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 WebDev Academy. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
