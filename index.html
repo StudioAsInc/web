@@ -1,113 +1,268 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebDev Academy</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="/">WebDev Academy</a> <!-- Logo/Site Title -->
-            </div>
-            <ul class="nav-links">
-                <li><a href="#tutorials">Tutorials</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="main/utils/utils.css"> 
+  <link rel="shortcut icon" href="favicon.png" type="image/png"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"> 
+  <title>Synapse | StudioAs Inc.</title> 
+  <!-- --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Synapse",
+        "url": "studioasinc.github.com/web"
+      }
+    </script> 
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Learn Web Development</h1>
-                <p>Your journey to becoming a web developer starts here. Explore our tutorials, articles, and projects.</p>
-                <a href="#tutorials" class="button">Start Learning</a>
-            </div>
-        </section>
+      body {
+        background-color: #151515;
+        color: black;
+        display: flex;
+        flex-direction: column;
+      }
 
-        <section id="tutorials" class="content-section">
-            <h2>Tutorials</h2>
-             <div class="grid-container">
-             <article class="tutorial-card">
-                  <h3>HTML Fundamentals</h3>
-                   <p>Learn the basic structure of HTML.</p>
-                   <a href="tutorial-html.html" class="read-more">Read More</a>
-                 </article>
-                  <article class="tutorial-card">
-                      <h3>CSS Basics</h3>
-                   <p>Learn how to style your web pages.</p>
-                   <a href="tutorial-css.html" class="read-more">Read More</a>
-                 </article>
-                  <article class="tutorial-card">
-                       <h3>JavaScript Introduction</h3>
-                    <p>Get started with the language of interactivity.</p>
-                    <a href="tutorial-js.html" class="read-more">Read More</a>
-                 </article>
-             </div>
-             <!-- More tutorial cards -->
-        </section>
+      .app-header {
+        width: 100%;
+        background-color: rgba(21, 21, 21, 0.8);
+        backdrop-filter: blur(14px);
+        position: fixed;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #212121;
+        z-index: 100;
 
-        <section id="articles" class="content-section">
-           <h2>Articles</h2>
-               <div class="grid-container">
-                   <article class="article-card">
-                   <h3>Understanding Responsive Design</h3>
-                   <p>Learn why and how to make websites that adapt to different screen sizes.</p>
-                    <a href="article-responsive.html" class="read-more">Read More</a>
-                   </article>
-                    <article class="article-card">
-                        <h3>Web Accessibility Best Practices</h3>
-                        <p>Learn to build websites for everyone.</p>
-                    <a href="article-accessibility.html" class="read-more">Read More</a>
-                    </article>
-                    <article class="article-card">
-                         <h3>Choosing a Web Framework</h3>
-                    <p>A look at popular options for front end development</p>
-                    <a href="article-framework.html" class="read-more">Read More</a>
-                   </article>
-                </div>
-             <!-- More article cards -->
-        </section>
+        .header-space {
+          flex-grow: 1;
+          padding: 12px;
+          display: flex;
+          align-items: center;
 
+          & > img {
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
 
-        <section id="projects" class="content-section">
-            <h2>Projects</h2>
-             <div class="grid-container">
-                    <article class="project-card">
-                   <h3>Simple Portfolio Website</h3>
-                   <p>A project to practice with HTML and CSS.</p>
-                    <a href="project-portfolio.html" class="read-more">Read More</a>
-                   </article>
-                    <article class="project-card">
-                        <h3>To-Do List App</h3>
-                        <p>Build a basic to-do app with HTML, CSS and JavaScript.</p>
-                    <a href="project-todo.html" class="read-more">Read More</a>
-                    </article>
-                     <article class="project-card">
-                         <h3>Calculator</h3>
-                    <p>Learn JavaScript logic with a simple project</p>
-                    <a href="project-calc.html" class="read-more">Read More</a>
-                   </article>
-             </div>
-             <!-- More Project cards -->
-        </section>
+        & > span {
+          border-left: 1px solid rgba(33, 33, 33, 0.6);
+          font-size: 48px;
+          padding: 14px;
+          cursor: pointer;
+          color: white;
+          transition: 0.2s;
 
-        <section id="about" class="content-section">
-            <h2>About WebDev Academy</h2>
-            <p>WebDev Academy is designed to be a free resource for learning all about web development. We strive to make coding accesible to anyone, from beginner to advanced learners. </p>
-            <p>We are constantly working to create new content and improve your learning experience. Feel free to get in touch with any feedback.</p>
-        </section>
+          &:hover {
+            background-color: rgba(33, 33, 33, 0.6);
+          }
+        }
+      }
 
-    </main>
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
 
-    <footer>
-        <p>© 2024 WebDev Academy. All rights reserved.</p>
-    </footer>
+      .app-intro {
+        margin-top: 75px;
+        padding: 16px;
 
-</body>
+        & > img {
+          object-fit: cover;
+        }
+
+        & > h1 {
+          font-size: 28px;
+          color: white;
+          margin-bottom: 8px;
+        }
+
+        & > p {
+          color: lightgray;
+          font-size: 16px;
+        }
+
+        & > div {
+          display: flex;
+          gap: 14px;
+          margin-top: 14px;
+
+          & > a {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #212121;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: 0.2s;
+
+            &:hover {
+              background-color: #323232;
+            }
+          }
+        }
+      }
+
+      .app-features {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        & > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border-radius: 14px;
+          background-color: rgba(33, 33, 33, 0.8);
+          backdrop-filter: blur(14px);
+          border: 1px solid rgba(55, 55, 55, 0.8);
+          padding-block: 24px;
+          padding-inline: 24px;
+          gap: 14px;
+          box-shadow: 0 0 8px rgba(55, 55, 55, 0.2);
+
+          & > img {
+            object-fit: cover;
+          }
+
+          & > h1 {
+            font-size: 24px;
+            color: white;
+            text-align: center;
+          }
+
+          & > p {
+            color: lightgray;
+            text-align: center;
+          }
+        }
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        background-color: #212121;
+        font-size: 14px;
+        gap: 16px;
+
+        .footer-stage {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          & > h1 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 8px;
+          }
+
+          & > a {
+            width: max-content;
+            font-size: 16px;
+            border: none;
+            color: rgb(0, 140, 255);
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+
+            &:hover {
+              background-color: #424242;
+            }
+          }
+        }
+
+        .footer-copyright {
+          color: lightgray;
+          text-align: center;
+        }
+      }
+    </style> 
+  <link rel="preload" as="script" href="main/utils/utils.js">
+ </head> 
+ <body> 
+  <div class="app-header"> 
+   <div class="header-space"> 
+    <img onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='/'" src="https://i.postimg.cc/wvPzNJkK/bycompany.png" width="164px" height="48px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
+   </div> 
+   <span onclick="if (!window.__cfRLUnblockHandlers) return false; toggleMenu(true)" translate="no" class="material-symbols-outlined">menu</span> 
+  </div> 
+  <div class="content"> 
+   <section class="app-intro"> 
+    <img src="https://i.postimg.cc/J0kL5nTs/appicon.png" width="64px" height="64px" style="border-radius: 15%;" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;">
+    <h1 translate="no">Synapse</h1> 
+    <p>Synapse is a platform for sharing your open source projects with the world. We're here to help you take your projects to the next level, connect with other developers, and build a community around your work.</p> 
+    <div> 
+     <a href="https://play.google.com/store/apps/details?id=com.unepix.store">Download</a> 
+    </div> 
+   </section> 
+   <section class="app-features"> 
+    <div class="bottom-border"> 
+     <img src="https://i.postimg.cc/65VsyqKP/3dicons-gift-box-front-gradient.png" width="64px" height="64px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
+     <h1>Advanced Features</h1> 
+     <p>We've added some great features to help you manage your projects and apps more effectively. These include project compatibility, ratings, a developer console, and support for different types of open source projects.</p> 
+    </div> 
+    <div class="bottom-border"> 
+     <img src="main/icons/sweet.png" width="64px" height="64px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
+     <h1>Sweet Interface</h1> 
+     <p>It's designed to make your experience with us as smooth and enjoyable as possible. With our sweet interface, you can access everything you need with ease and confidence.</p> 
+    </div> 
+    <div class="bottom-border"> 
+     <img src="main/icons/code.png" width="64px" height="64px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
+     <h1>Developer Console</h1> 
+     <p>We're here to help you take your projects and apps to the next level. With the Developer Console, you can publish them to everyone, share your code with Codemate, and connect with other developers.</p> 
+    </div> 
+    <div> 
+     <img src="main/icons/hit-by-cupid.png" width="64px" height="64px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
+     <h1>Support Us</h1> 
+     <p>We're dedicated to building a top-notch platform for you and your projects, but we need some financial support to make this happen. That's why we've set up a token system where you can support us financially by watching ads or buying them.</p> 
+    </div> 
+   </section> 
+  </div> 
+  <footer> 
+   <div class="footer-stage"> 
+    <h1>Synapse</h1> 
+    <a href="https://play.google.com/store/apps/details?id=com.unepix.store">Download</a> 
+    <a href="#">Updates</a> 
+   </div> 
+   <div class="footer-stage"> 
+    <h1>Community</h1> 
+    <a href="https://t.me/unepix">Telegram</a> 
+    <a href="https://instagram.com/unepixteam">Instagram</a> 
+    <a href="https://youtube.com/@unepix">YouTube</a> 
+   </div> 
+   <div class="footer-stage"> 
+    <h1>More</h1> 
+    <a href="/privacy-policy">Privacy Policy</a> 
+    <a href="#">Terms of Use</a> 
+   </div> 
+   <p class="footer-copyright">2025 StudioAs Inc. - All Rights Reserved</p> 
+  </footer> 
+  <div id="menu" class="menu"> 
+   <div class="menu-top"> 
+    <span onclick="if (!window.__cfRLUnblockHandlers) return false; toggleMenu(false)" translate="no" class="material-symbols-outlined close-btn">close</span> 
+   </div> 
+   <a href="/">Home</a> 
+   <a href="/privacy-policy">Privacy Policy</a> 
+   <a href="/terms-of-use">Terms of Use</a> 
+  </div> 
+  <!-- --> 
+ </body>
 </html>
