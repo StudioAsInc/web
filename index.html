@@ -219,17 +219,28 @@
      <h1>22 December 2006</h1> 
      <p>Yeah, this is my original & authentic release date. Jokes apart, my date of birth. Don't forget to pray for me.</p> 
     </div> 
-    <section>
     <div> 
      <a href="https://linktr.ee/AshikisOnline">Download legal documents</a> 
     </div> 
-    </section>
     
     <div class="bottom-border"> 
-     <img src="main/icons/sweet.png" width="64px" height="64px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
-     <h1>Free Fire</h1> 
-     <p>Bro, If you play Free Fire. Keep my UID. Let's do 1v1 ROOM.</p> 
-    </div> 
+  <img src="https://i.postimg.cc/NjHX3rCV/TK.png" width="92px" height="92px" style="border-radius: 15%;" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;">
+  <h1>Free Fire</h1> 
+  <p>Bro, If you play Free Fire. Keep my UID. Let's do 1v1 ROOM. Click the box and your game will automatically opens my game ID</p> 
+  <p>UID: <span id="uid">2 2 6 3 9 8 8 9 1 4</span></p>
+  <button onclick="copyUID()">Copy</button>
+</div>
+
+<script>
+  function copyUID() {
+    const uid = document.getElementById("uid").innerText;
+    navigator.clipboard.writeText(uid.replace(/ /g, '')) // Remove spaces before copying
+      .then(() => alert("UID copied to clipboard!"))
+      .catch(() => alert("Failed to copy UID."));
+  }
+</script>
+
+
     <div class="bottom-border"> 
      <img src="main/icons/code.png" width="64px" height="64px" oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;"> 
      <h1>Why this?</h1> 
