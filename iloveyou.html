@@ -4,45 +4,65 @@
   <meta charset="UTF-8">
   <title>Just For You...</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background: url('https://i.imgur.com/HxY6e9q.jpg') no-repeat center center fixed;
-      background-size: cover;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
       font-family: 'Georgia', serif;
-      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      height: 100vh;
-      overflow: hidden;
+      background-color: black;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url('https://i.postimg.cc/vBXVyYLy/IMG-20250408-153705-163.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(5px);
+      z-index: -2;
     }
 
     .letter {
       max-width: 800px;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       line-height: 2.5rem;
       text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 20px;
       backdrop-filter: blur(3px);
-      padding: 20px;
+      color: white;
     }
 
     .text span {
       opacity: 0;
-      animation: fadeIn 0.05s forwards;
+      display: inline-block;
+      white-space: pre; /* preserve spacing */
+      animation: fadeIn 0.8s forwards;
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .yes-btn {
-      margin-top: 50px;
+      margin-top: 40px;
       padding: 15px 40px;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       border: none;
       border-radius: 30px;
       background-color: #ff4081;
@@ -55,6 +75,29 @@
       background-color: #e91e63;
     }
 
+    #playBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0,0,0,0.6);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #playBtn svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
     audio {
       display: none;
     }
@@ -62,43 +105,67 @@
 </head>
 <body>
 
-  <audio autoplay loop>
+  <audio id="bgm" loop crossorigin="anonymous">
     <source src="https://bit.ly/44fdP5m" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
 
+  <button id="playBtn">
+    <svg id="icon" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </button>
+
   <div class="letter">
-    <div class="text" id="loveText"></div>
+    <div class="text">
+      <span style="font-size: 2.5rem; font-weight: bold;" id="dearText"></span><br><br>
+      <div id="loveText" style="font-size: 1.2rem;"></div>
+    </div>
     <button class="yes-btn" id="yesBtn" style="display: none;">Yes</button>
   </div>
 
   <script>
-    const text = `প্রিয়,
+    const dearText = "My love,";
+    const bodyText = `From the moment I met you, my world changed.  
+Your smile lights up the darkest parts of me.  
+You're not just someone I love — you're my peace, my home.  
 
-তোর চোখে আমি স্বপ্ন দেখি, যা অন্য কেউ দেখে না।
-তোর কথা ভাবলেই আমার মুখে অজান্তেই হাসি আসে।
-তুই আমার ভালোবাসার সবচেয়ে সুন্দর অধ্যায়।
-আমি চাই তুই হবি আমার শেষ ভালোবাসা।
+I want to be yours, completely, forever.  
 
-Will you be mine... forever?`;
+Will you say "Yes"?`;
 
-    const container = document.getElementById('loveText');
-    const btn = document.getElementById('yesBtn');
+    document.getElementById('dearText').textContent = dearText;
 
     let delay = 0;
-
-    text.split('').forEach((char, i) => {
+    for (let i = 0; i < bodyText.length; i++) {
       const span = document.createElement('span');
-      span.textContent = char;
+      span.textContent = bodyText[i];
       span.style.animationDelay = `${delay}s`;
       delay += 0.05;
-      container.appendChild(span);
+      document.getElementById('loveText').appendChild(span);
+    }
+
+    setTimeout(() => {
+      document.getElementById('yesBtn').style.display = 'inline-block';
+    }, delay * 1000 + 1000);
+
+    let playing = false;
+
+    document.getElementById('playBtn').addEventListener('click', () => {
+      if (!playing) {
+        document.getElementById('bgm').play();
+        document.getElementById('icon').innerHTML = `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>`; // pause icon
+      } else {
+        document.getElementById('bgm').pause();
+        document.getElementById('icon').innerHTML = `<path d="M8 5v14l11-7z"/>`; // play icon
+      }
+      playing = !playing;
     });
 
-    // Show button after text ends
-    setTimeout(() => {
-      btn.style.display = 'inline-block';
-    }, delay * 1000 + 1000);
+    document.getElementById('yesBtn').addEventListener('click', () => {
+      const message = encodeURIComponent("I love you too");
+      const phone = "8801706933414";
+      window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    });
   </script>
 </body>
 </html>
