@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just For You...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.imgur.com/HxY6e9q.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Georgia', serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .letter {
+      max-width: 800px;
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      text-align: center;
+      backdrop-filter: blur(3px);
+      padding: 20px;
+    }
+
+    .text span {
+      opacity: 0;
+      animation: fadeIn 0.05s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .yes-btn {
+      margin-top: 50px;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes-btn:hover {
+      background-color: #e91e63;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="https://bit.ly/44fdP5m" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="letter">
+    <div class="text" id="loveText"></div>
+    <button class="yes-btn" id="yesBtn" style="display: none;">Yes</button>
+  </div>
+
+  <script>
+    const text = `প্রিয়,
+
+তোর চোখে আমি স্বপ্ন দেখি, যা অন্য কেউ দেখে না।
+তোর কথা ভাবলেই আমার মুখে অজান্তেই হাসি আসে।
+তুই আমার ভালোবাসার সবচেয়ে সুন্দর অধ্যায়।
+আমি চাই তুই হবি আমার শেষ ভালোবাসা।
+
+Will you be mine... forever?`;
+
+    const container = document.getElementById('loveText');
+    const btn = document.getElementById('yesBtn');
+
+    let delay = 0;
+
+    text.split('').forEach((char, i) => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.animationDelay = `${delay}s`;
+      delay += 0.05;
+      container.appendChild(span);
+    });
+
+    // Show button after text ends
+    setTimeout(() => {
+      btn.style.display = 'inline-block';
+    }, delay * 1000 + 1000);
+  </script>
+</body>
+</html>
